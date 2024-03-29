@@ -41,7 +41,7 @@ for womanList in allLinks:
         #blacklist=["List","Category","Template","Help","Special","Edit","Discuss","Recent","page","You"]
         blacklist=("(List|Category)|(Template|Help)|(Special|Edit)|(Discuss|Recent)|(page|Music)|(list|Articles)" 
             "|(Guides|Portal)|(in|Women)|(Female|women)|(Visit|How)|(Add|Wikipedia)|(ISBN|Books)|(and|art)|(et|Draft)|(User|Talk)"
-            "|(by|wmf)|(Upload|ISSN)")
+            "|(by|wmf)|(Upload|ISSN)|(war|wars)")
         if(re.search(blacklist, woman) ):
             continue
         if(woman.isascii()==-1):
@@ -56,13 +56,15 @@ timer2=time.time()
 print("Woman database complete")
 elapsed = timer2-timer1
 print("Time elapsed: ", elapsed)
+print(len(masterWomenList))
+
 womanCount = 0
 guessed = []
 confirm = input("Ready to begin? Press Enter")
 
 clock1 = time.time()
 while womanCount <100:
-    guess = input(f"Woman Count:\n {womanCount}" )
+    guess = input(f"Woman Count: {womanCount}\n" )
     guess = guess.lower()
 
     #If correct and not in guessed list, increment womanCount
